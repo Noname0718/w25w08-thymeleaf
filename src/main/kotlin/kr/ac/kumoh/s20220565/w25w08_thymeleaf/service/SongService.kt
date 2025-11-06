@@ -1,0 +1,19 @@
+package kr.ac.kumoh.s20220565.w25w08_thymeleaf.service
+
+import kr.ac.kumoh.s20220565.w25w08_thymeleaf.repository.SongRepository
+import org.springframework.stereotype.Service
+
+@Service
+class SongService (
+    private val repository: SongRepository
+){
+    //모든 노래 리스트 얻기
+    fun getAllSongs() = repository.findAll()
+
+    //id와 일치하는 노래 얻기
+    fun getSongById(id: Int) = repository.findById(id)
+
+    //랜덤으로 노래 한 곡 얻음
+    // [Note] : 리스트가 많은 때는 성능 저하 우려
+    fun getRandomSong() = repository.findAll().randomOrNull()
+}

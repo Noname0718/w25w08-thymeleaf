@@ -1,4 +1,7 @@
-package kr.ac.kumoh.s20220565.w25w08_thymeleaf.model;
+package kr.ac.kumoh.s20220565.w25w08_thymeleaf.model
 
-public class Song {
-}
+data class Song(
+    var id:Int,
+    var title:String,
+    var Singer: String,
+)
